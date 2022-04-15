@@ -11,3 +11,16 @@ long long powr(long long a, long long b) {
 	}
 	return res;
 }
+
+int mod = 10e9 + 7;
+long long powr(long long a, long long b) {
+	long long res = 1;
+	while (b) {
+		if (b & 1) res *= a % mod;
+		a = a * a;
+		a %= mod;
+		b >>= 1;
+	}
+	return res;
+}
+
