@@ -1,0 +1,47 @@
+int mod = 1e9 + 7;
+int N = 100001;
+vector<int> primes;
+
+void getprimes() {
+
+    vector<int> sieve(N, 1);
+
+    for (int i = 2; i < N; i++) {
+        if (sieve[i]) {
+            primes.push_back(i);
+            for (int j = i * i; j < N; j += i) {
+                sieve[j] = 1;
+            }
+        }
+    }
+
+}
+void solve() {
+
+    int m, n;
+    cin >> m >> n;
+    vector<int> segment(n - m + 1, 1);
+
+    for (auto p : primes) {
+        int i;
+        //normal start point
+        i = (m / p) * p;
+        //for overlapping startpoints
+        if (p >= m and p <= n) i = 2 * p;
+
+        if (p * p > n ) break;
+
+        for (; i <= n; i += p) {
+            if (i < m) continue;
+            segment[i - m] = 0;
+        }
+
+    }
+
+    for (int i = m; i <= n; i++) {
+        if (segment[i - m] == 1 and i != 1)
+            cout << i << endl;
+    }
+
+
+}
