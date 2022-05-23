@@ -1,0 +1,16 @@
+Fermats little theroem 
+a^(m-2) = MMi of a  m is the mod
+
+
+EXtended euclidean
+______________________________
+ax + by = gcd(a,b)
+if(b==m)
+ax + my = gcd(a,m)
+for MMI to exist gcd(a,m)==1, means\
+ax + my=1;
+take %m both sides
+ax%m = 1
+Solution to extended euclidean algorithm (x) is the MMI
+
+
