@@ -5,6 +5,8 @@ What we do is do somework for the entire constraints and then use that work to o
 if we know the any one min primefactor of each element in 1 to n, we can find prime factorisation of each element k in 1 to n
 HOW? by diving it continuously by the minimu, prime factor of that number
 
+APPly in places where Nlogn Can be applied like i applied on 10^7
+
 const int N = 1e7 + 5;
 int mind[N];
 
@@ -28,7 +30,7 @@ vector<int> getPrimes(int v) {
 }
 
 
-
+here we couldnt use space so for optimisaiton we calculated all the factors till root n
 
 
 2. second is also very simple see , when we calculate factorization we go till root n , we get prime factors but we also iterate on some non prime factors 
